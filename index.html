@@ -10,12 +10,13 @@
 <body>
 
     <div class="container">
+    <div id="mensajeError" class="mensaje-error"></div>
         <div class="header">
     <h1>Cooperativa Financiera</h1>
     <img src="logo.png" class="logo">
-</div>
+    </div>
 
-<div class="grid">
+    <div class="grid">
 
     <!-- BLOQUE 1 -->
     <div class="card">
@@ -23,9 +24,12 @@
 
         <label for="txtIngresos">Ingresos:</label>
         <input type="text" id="txtIngresos">
+        <small class="error" id="errorIngresos"></small>
+
 
         <label for="txtEgresos">Egresos:</label>
         <input type="text" id="txtEgresos">
+        <small class="error" id="errorEgresos"></small>
 
         <p>Disponible: <span id="spnDisponible"></span></p>
         <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
@@ -40,12 +44,17 @@
 
         <label for="txtMonto">Monto:</label>
         <input type="text" id="txtMonto">
+        <small class="error" id="errorMonto"></small>
+
 
         <label for="txtPlazo">Plazo en años:</label>
         <input type="text" id="txtPlazo">
+        <small class="error" id="errorPlazo"></small>
+
 
         <label for="txtTasaInteres">Tasa de interés:</label>
         <input type="text" id="txtTasaInteres">
+        <small class="error" id="errorTasa"></small>
 
         <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
         <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
