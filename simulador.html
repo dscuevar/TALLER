@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Crédito</title>
     <link rel="stylesheet" href="simulador.css">
+    
 </head>
 <body>
 
     <div class="container">
-        <h1>Simulador de Crédito</h1>
+        <div class="header">
+    <h1>Cooperativa Financiera</h1>
+    <img src="logo.png" class="logo">
+</div>
 
-        <h2>Datos financieros</h2>
+<div class="grid">
+
+    <!-- BLOQUE 1 -->
+    <div class="card">
+        <h2>Capacidad de Crédito</h2>
+
         <label for="txtIngresos">Ingresos:</label>
         <input type="text" id="txtIngresos">
 
@@ -20,8 +29,15 @@
 
         <p>Disponible: <span id="spnDisponible"></span></p>
         <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
+        <p> </p>
+        <button onclick="calcular1();" id="btnCalcularCredito">Calcular Capacidad de Crédito</button> 
+        <button onclick="reiniciar1();" id="btnReiniciar">Reiniciar</button>
+    </div>
 
-        <h2>Solicitud de crédito</h2>
+    <!-- BLOQUE 2 -->
+    <div class="card">
+        <h2>Solicitud de Crédito</h2>
+
         <label for="txtMonto">Monto:</label>
         <input type="text" id="txtMonto">
 
@@ -35,12 +51,17 @@
         <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
         <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
         <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
+        <div class="buttons"> 
+            <button onclick="calcular();" id="btnCalcularCredito">Calcular Solicitud de Crédito</button> 
+            <button onclick="reiniciar()"  id="btnReiniciar">Reiniciar</button>
+    </div>
 
-        <div class="buttons">
-            <button id="btnCalcularCredito">Calcular Crédito</button>
-            <button id="btnReiniciar">Reiniciar</button>
+</div>
         </div>
     </div>
+
+    <script src="funciones.js"></script>
+    <script src="simulador.js"></script>
 
 </body>
 </html>

@@ -1,70 +1,239 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Fondo general */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* Contenedor principal */
 .container {
-    width: 400px;
+    max-width: 1000px;
     margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    padding: 20px 30px;
 }
 
-h1 {
-    text-align: center;
+/* ENCABEZADO */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 15px;
     margin-bottom: 20px;
 }
 
-h2 {
-    margin-top: 20px;
+.header h1 {
+    font-size: 24px;
+    color: #1e3a8a;
+}
+
+.logo {
+    width: 60px;
+}
+
+/* GRID DE DOS COLUMNAS */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* BLOQUES */
+.card {
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+}
+
+/* Títulos */
+.card h2 {
+    margin-bottom: 15px;
+    color: #1e40af;
     font-size: 18px;
 }
 
+/* Labels e inputs */
 label {
     display: block;
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 input {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
-    border-radius: 5px;
+    border-radius: 6px;
     border: 1px solid #ccc;
-    box-sizing: border-box;
+    outline: none;
+    transition: border 0.3s;
 }
 
+input:focus {
+    border-color: #2563eb;
+}
+
+/* Resultados */
 p {
-    margin-top: 10px;
+    margin-top: 12px;
+    font-size: 14px;
 }
 
 span {
     font-weight: bold;
-    color: #2c3e50;
+    color: #111827;
 }
 
+/* Botones */
 .buttons {
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
 }
 
 button {
-    width: 48%;
+    flex: 1;
     padding: 10px;
     border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-button:hover {
-    background-color: #2980b9;
+/* Botón principal */
+#btnCalcularCredito {
+    background: #1e40af;
+    color: white;
 }
+
+#btnCalcularCredito:hover {
+    background: #1e3a8a;
+}
+
+/* Botón secundario */
+#btnReiniciar {
+    background: #e5e7eb;
+}
+
+#btnReiniciar:hover {
+    background: #d1d5db;
+}
+
+/* Estado crédito */
+#spnEstadoCredito {
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* RESPONSIVE */
+/* =====================
+   BASE (ya lo tienes)
+===================== */
+
+/* GRID RESPONSIVE */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* =====================
+   TABLETS (≤ 1024px)
+===================== */
+@media (max-width: 1024px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* se vuelve vertical */
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        margin: 10px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    /* Header en columna */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 45px;
+    }
+
+    /* Tarjetas */
+    .card {
+        padding: 15px;
+    }
+
+    .card h2 {
+        font-size: 16px;
+    }
+
+    /* Inputs más grandes (mejor UX móvil) */
+    input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Botones en columna */
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    /* Resultados más claros */
+    p {
+        font-size: 13px;
+    }
+
+    span {
+        display: block;
+        margin-top: 3px;
+    }
+}
+
