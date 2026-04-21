@@ -1,10 +1,13 @@
 function calcular() {
     // Leer valores
     let ingresos = parseFloat(document.getElementById("txtIngresos").value);
-    let egresos = parseFloat(document.getElementById("txtEgresos").value);
+    let arriendo = parseFloat(document.getElementById("txtArriendo").value);
+    let alimentacion = parseFloat(document.getElementById("txtAlimentacion").value);
+    let varios = parseFloat(document.getElementById("txtVarios").value);
     let monto = parseFloat(document.getElementById("txtMonto").value);
     let plazo = parseFloat(document.getElementById("txtPlazo").value);
     let tasa = parseFloat(document.getElementById("txtTasaInteres").value);
+    let egresos = arriendo + alimentacion + varios
 
     // VALIDAR
     if (!validarDatos(ingresos, egresos, monto, plazo, tasa)) {
@@ -43,7 +46,11 @@ function calcular() {
 
 function calcular1(){
     let ingresos = parseFloat(document.getElementById("txtIngresos").value);
-    let egresos = parseFloat(document.getElementById("txtEgresos").value);
+    let arriendo = parseFloat(document.getElementById("txtArriendo").value);
+    let alimentacion = parseFloat(document.getElementById("txtAlimentacion").value);
+    let varios = parseFloat(document.getElementById("txtVarios").value);
+
+    let egresos = arriendo + alimentacion + varios
 
     if (isNaN(ingresos)) ingresos = 0;
     if (isNaN(egresos)) egresos = 0;
@@ -53,6 +60,10 @@ function calcular1(){
 
     let capacidad = calcularCapacidadPago(disponible);
     document.getElementById("spnCapacidadPago").innerText = capacidad
+
+    resultado1=document.getElementById('txtEgresos');
+    resultado1.innerHTML= "Egresos: "+egresos
+
 }
 
 function reiniciar1() {
